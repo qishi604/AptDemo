@@ -49,16 +49,18 @@ public class AdAdapterProcessor extends AbstractProcessor {
     return genFactory(roundEnvironment);
   }
 }
-
+```
 3. 注册处理器
 这里主要讲手动注册，google 的自动注册在这个项目没成功，不知道什么原因。手动注册其实也不麻烦，相对于自动注册更稳一点
 - 在 main 目录下新建 `resources/META-INF/services/` 目录
 - 在 `services` 目录下新建文件 `javax.annotation.processing.Processor`
-- 在文件 `javax.annotation.processing.Processor` 填写注解处理器，有多个的话，每行写一个，如下
+- 在文件 `javax.annotation.processing.Processor` 填写注解处理器，有多个的话，每个单独一行:
+
 ```
 com.lanayru.apt.compiler.AdAdapterProcessor
 com.lanayru.apt.compiler.ViewBinderProcessor
 ```
+
 
 ## 4. 使用注解
 1. 在 module 的 `build.gradle` 中添加依赖 (注意，哪个模块用到注解就在哪个模块添加)
@@ -79,6 +81,7 @@ public class GPAdAdapter implements AdAdapter {
 }
 ```
 
+
 ## 5. 编译代码，生成 java 类
 可以使用 `make project` 或者 `build`
 
@@ -89,6 +92,9 @@ public class GPAdAdapter implements AdAdapter {
 详细请看源码，代码不算复杂，后面有时间再补点注解和其他的文档
 
 ## todo
-- [] AutoService 注解不生效，不知道为啥
-- [] 补充注解文档
-- [] 补充生成代码文档
+- [ ] `AutoService ` 注解不生效，暂时没找到原因
+- [ ] 补充注解文档
+- [ ] 补充生成代码文档
+```
+
+```
