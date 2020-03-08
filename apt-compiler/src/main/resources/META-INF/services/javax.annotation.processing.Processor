@@ -1,0 +1,2 @@
+com.lanayru.apt.compiler.AdAdapterProcessor
+com.lanayru.apt.compiler.ViewBinderProcessor
